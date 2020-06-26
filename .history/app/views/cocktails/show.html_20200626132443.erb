@@ -1,0 +1,13 @@
+<%= image_tag "logo.png", alt: "Le Wagon", width: 200 %>
+
+<h1 class="avatar-square"><%= @cocktail.name %></h1>
+
+<% @doses.each do |dose| %>
+    <%= Ingredient.find(dose[:ingredient_id]).name %>
+    <%= dose.description %>
+<% end %>
+
+<div>
+<%= link_to "Add ingredient and doses", new_cocktail_dose_path(@cocktail) %>
+<%= link_to "All cocktails", cocktails_path %>
+</div>

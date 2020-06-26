@@ -1,0 +1,8 @@
+<h1><%= @cocktail.name %></h1>
+
+<% @doses.each do |dose| %>
+    <%= dose.description %>
+    <%= Ingredient.find(dose[:ingredient_id]).name %>
+<% end %>
+
+<%= link_to "Add ingredient and doses", new_cocktail_dose_path(@cocktail) %>
